@@ -1,0 +1,17 @@
+module Nesta
+  class App
+    configure do
+      Compass.configuration do |config|
+        config.project_path= File.dirname(__FILE__)
+        config.sass_dir = 'views'
+        config.environment = :development
+        config. relative_assets = true
+        config.http_path = "/"
+      end
+
+      set :haml, { :format => :html5 }
+      set :sass, Compass.sass_engine_options
+
+    end
+  end
+end

@@ -1,1 +1,63 @@
-%section.articles= article_summaries(latest_articles)
+js: home
+
+.hidden
+  %h1
+    Home
+
+:markdown
+  # About Us
+  We are a club team at Carnegie Mellon University. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id mauris placerat nunc elementum tempus et a libero. Pellentesque pretium blandit leo eget congue. Curabitur laoreet enim sit amet nisi lobortis rutrum.
+
+%hr.in-col
+
+:markdown
+  # Join Our Team
+  You don't need any real experience to play, but a little bit of experience playing ice or inline helps.
+
+.two-col-box
+
+  .two-col
+    :markdown
+      ## Practice Info
+      Practives are held every Tuesday, 9-10 pm at  <a>Bladerunners Ice Complex</a>. Cars leave Morewood at 8pm.
+    
+    .dialog{:dialog => '1', :title => 'Bladerunners Ice Complex'}
+      %p
+        here is some text
+
+    :markdown
+      ## Game Info
+      We play games at <a class="dialog-link" dialog="2">RMU Island Sports Center</a> against other Pittsburgh area schools. See [Schedule](schedule) for more info.
+
+    .dialog{:dialog => '2', :title => 'RMU Island Sports Center'}
+      <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?saddr=5000+Forbes+Avenue,+Pittsburgh,+PA+15213+(Carnegie+Mellon+University)&amp;daddr=rmu+island+sports+center&amp;hl=en&amp;sll=40.481152,-80.04696&amp;sspn=0.137097,0.228996&amp;geocode=FfkcaQIdcio8-yH2gEo4dEex-Q%3BFQZGagId5_g4-yEFhvbB1G_KlylLrL7AN140iDGpDSwtbWgWKQ&amp;vpsrc=0&amp;mra=pd&amp;t=m&amp;ie=UTF8&amp;ll=40.463928,-80.048447&amp;spn=0.137132,0.228996&amp;output=embed"></iframe>
+      :markdown
+        [Full Map](http://g.co/maps/emvjw)  |  [RMU Sports Complex Website](http://www.rmu.edu/web/cms/isc/pages/default.aspx)
+
+    %h2
+      Dues
+    %p
+      Player dues generally run around $150 for league fees, practice time, jerseys, pucks, etc. Drivers are compensated for gas.
+
+  .two-col
+    :markdown
+      ## Equipment
+      * Stick
+      * Hockey Skates
+      * Helmet
+      * Shin Pads
+      * Cup
+      * Elbow Pads (Recommended)
+      * Mouthguard (Recommended)
+      * Inline Pants (Recommended)
+      * “Indoor” Whels (Recommended)
+    
+    %button#join-button
+      Join Email List
+    
+    :markdown
+      Questions before you join? [Email Us](mailto:email@andrew)
+  
+  .clear
+
+

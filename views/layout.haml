@@ -1,0 +1,39 @@
+!!!
+%html{ :lang => "en", "xml:lang" => "en", :xmlns => 'http://www.w3.org/1999/xhtml' }
+  %head
+    %meta{ "http-equiv" => "content-type", "content" => "text/html; charset=utf-8" }
+    - if @description
+      %meta{ "name" => "description", "content" => @description }
+    - if @keywords
+      %meta{ "name" => "keywords", "content" => @keywords }
+    %title= @title
+
+    %script(type="text/javascript" src="js/jquery-1.6.3.min.js")
+    %script(type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js")
+    %script(type="text/javascript" src="js/layout.js")
+
+    - jsFile = @page.metadata('js')
+    - if jsFile != nil
+      %script(type="text/javascript" src="js/#{@page.metadata('js')}.js")
+
+    %link{ :href => "/css/font/droidsans.css", :media => "screen", :rel => "stylesheet", :type => "text/css" }
+    %link{ :href => "/css/style.css", :media => "screen", :rel => "stylesheet", :type => "text/css" }
+    %link{ :href => "css/blitzer/jquery-ui-1.8.16.custom.css", :media => "screen", :rel => "stylesheet", :type => "text/css" }
+
+    = haml :analytics, :layout => false
+
+  %body
+    #container
+      #header
+        = haml :header, :layout => false
+        /%p.title= @heading
+        /%p.subtitle= @subtitle
+
+      #content
+        = yield
+
+      #sidebar
+        = haml :sidebar, :layout => false
+
+      #footer
+        /= haml :footer, :layout => false

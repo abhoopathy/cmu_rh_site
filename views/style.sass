@@ -1,0 +1,103 @@
+@import "compass/reset"
+@import "compass/utilities/general/clearfix"
+@import "compass/css3"
+@import "sassybuttons"
+
+$blueprint_grid_columns: 16
+$blueprint_grid_width: 40px
+$blueprint-grid-margin: 20px
+$column-padding: 10px
+$line-color: #eaeaea
+$red-color: #993333
+$link-hover-color: #999999
+
+@mixin border-bottom
+  border-bottom: thin solid $line-color
+
+@import "blueprint"
++blueprint
+
+
+@mixin droidRegular
+  font-family: 'DroidSansRegular', "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif
+
+@mixin droidBold
+  font-family: 'DroidSansBold', "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif
+
+a,a:visited,a:hover
+  +droidBold
+  color: $red-color
+  text-decoration: none
+a:hover
+  color: $link-hover-color
+
+body
+  +droidRegular
+  background-color: #f9f9f9
+
+p
+  color: #111
+
+h1
+  +droidBold
+  text-transform: uppercase
+  font-size: 1.3em
+
+h2
+  +droidBold
+  text-transform: uppercase
+  font-size: 1em
+  margin-bottom: 5px
+
+hr
+  +colruler($line-color)
+  height: 1px
+  margin: 0
+
+.in-col
+  margin-bottom: $column-padding
+
+#container
+  +container
+  width: $blueprint-container-size + $blueprint-grid-margin
+  padding-left: $blueprint-grid-margin 
+
+#content
+  +column(12)
+  +border($line-color,1px)
+  padding-top: 10px
+  +border-bottom
+
+#sidebar
+  +column(4, true)
+  padding-top: 10px
+
+#footer
+
+.hidden
+  display: none
+
+$indent: 10px
+
+.two-col-box
+  padding-top: $indent
+  width: 100%
+  background-color: #FDFFD4
+
+.two-col
+  width: (span(12))/2 - $indent
+  float: left
+  margin-left: $indent
+
+#join-button
+  //@include sassy-button(gradient style, border radius, font size, first color, 
+  //second color, text color, text style, auto hover)
+
+  margin-bottom: 4px
+  @include sassy-button("simple", 3px, 1.2em, #c85f5f, #993333, #fff, "inset")
+
+@import "header.sass"
+@import "sidebar.sass"
+
+.clear
+  clear: both

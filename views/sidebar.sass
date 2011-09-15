@@ -1,0 +1,32 @@
+//sidebar.sass
+.sidebar-right-link
+  width: 100%
+  text-align: right
+
+.sidebar-box
+  .sidebar-row
+    border-top: thin solid $line-color
+    width: 100%
+
+    .date
+      float: left
+      width: 40px
+
+    .name
+      float: left
+
+    .time-result
+      float: right
+      width: 40px
+      text-align: right
+
+  .sidebar-row.bold
+    +droidRegular
+
+.sidebar-box.roster
+  .sidebar-row
+    +droidRegular
+    .name
+    .number
+      float: right
+      text-align: right
