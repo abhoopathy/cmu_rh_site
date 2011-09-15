@@ -1,0 +1,15 @@
+=== 2.2.0 / 2010-08-22
+
+* New maintainer, Aaron Suggs!
+* Expanded README
+* Compatible with Vlad 2.1.
+* Fixed git submodule initialization for older git versions (< 1.5.6).
+* Add a fast checkout/update mode. [fisons]
+
+=== 2.1.0 / 2009-10-14
+
+* Added git submodule support. [Balazs Nagy]
+
+=== 2.0.0 / 2009-08-19
+
+* Birthday!
