@@ -1,0 +1,14 @@
+%h2
+  Roster
+
+- get_roster.each do |player|
+  .sidebar-row
+    .name
+      = player['name']
+    .number
+      = player['number']
+    .clear
+
+.sidebar-right-link
+  :markdown
+    [Full Roster](roster)
