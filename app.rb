@@ -36,6 +36,10 @@ module Nesta
 
       end
 
+      def upcoming_game?(game)
+        true
+      end
+
       def csv_to_hash(csv)
         lineArray = []
         File.open(csv, 'r').each do |line|

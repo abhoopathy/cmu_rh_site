@@ -1,36 +1,9 @@
 .sidebar-box
-  %h2
-    Schedule
-
-  - get_schedule.each do |game|
-    .sidebar-row
-      .date Oct 8
-      .name
-        = game['home']
-      .time-result W 8-7
-      .clear
-
-  .sidebar-right-link
-    :markdown
-      [Full Schedule](schedule)
+  = haml :sidebar_schedule, :layout => true
 
 .sidebar-box.roster
-  %h2
-    Roster
-
-  - get_roster.each do |player|
-    .sidebar-row
-      .name
-        = player['name']
-      .number
-        = player['number']
-      .clear
-
-  .sidebar-right-link
-    :markdown
-      [Full Roster](roster)
-
-
+  = haml :sidebar_roster, :layout => true
+  
   /
     #sidebar
       = haml :categories, :layout => false
