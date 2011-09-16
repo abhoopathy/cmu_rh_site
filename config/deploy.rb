@@ -20,7 +20,6 @@ set :branch, 'master'
 set :git_shallow_clone, 1
 set :scm_verbose, true
 set :use_sudo, false
-set :scm_passphrase, "umgoblue"
 
 default_run_options[:pty] = true
 server domain, :app, :web
