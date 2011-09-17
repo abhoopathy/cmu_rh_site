@@ -4,6 +4,7 @@ require 'compass'
 require 'sinatra'
 require 'sassy-buttons'
 require 'coffee-script'
+require 'v8'
 
 module Nesta
   class App
