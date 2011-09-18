@@ -2,16 +2,30 @@
   Schedule
 
 /month, day, year, time, away, away_score, home, home_score, playoff
+- get_schedule.each do |game|
+  - if !game.playoff?
+    .sidebar-row{ :class => ('bold' if game.upcoming?)}
+      .date
+        = game.game_time.strftime("%m/%e").gsub(/\A0/,'').gsub(/\s/,'')
+      .name
+        = (game.home? ? "" : "@")+ game.truncate_opponent
+      .time-result
+        = (game.upcoming? ? game.game_time.strftime('%h:%M%p') : game.result_string)
+      .clear
+
+.sidebar-row.bold
+  </br>Playoffs
 
 - get_schedule.each do |game|
-  .sidebar-row{ :class => ('bold' if game.playoff?)}
-    .date
-      = game.game_time.strftime("%m/%e").gsub(/\A0/,'').gsub(/\s/,'')
-    .name
-      = (game.home? ? "" : "@")+ game.truncate_opponent
-    .time-result
-      = (game.upcoming? ? game.game_time.strftime('%h:%M%p') : game.result_string)
-    .clear
+  - if game.playoff?
+    .sidebar-row{ :class => ('bold' if game.upcoming?)}
+      .date
+        = game.game_time.strftime("%m/%e").gsub(/\A0/,'').gsub(/\s/,'')
+      .name
+        = (game.home? ? "" : "@")+ game.truncate_opponent
+      .time-result
+        = (game.upcoming? ? game.game_time.strftime('%h:%M%p') : game.result_string)
+      .clear
 
 .sidebar-right-link
   :markdown
