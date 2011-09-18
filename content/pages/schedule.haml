@@ -4,5 +4,12 @@
 %h1
   Schedule
 
-%p
-  - get_schedule
+- get_schedule.each do |game|
+  .sidebar-row{ :class => ('bold' if game.playoff?)}
+    .date
+      = game.game_time.strftime("%b %d")
+    .name
+      = (game.home? ? "" : "@")+ game.opponent
+    .time-result
+      = (game.upcoming? ? game.game_time.strftime('%h:%M%p') : game.result_string)
+    .clear

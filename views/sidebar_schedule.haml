@@ -4,11 +4,13 @@
 /month, day, year, time, away, away_score, home, home_score, playoff
 
 - get_schedule.each do |game|
-  .sidebar-row{ :class => ('bold' if upcoming_game? game)}
-    .date Oct 8
+  .sidebar-row{ :class => ('bold' if game.playoff?)}
+    .date
+      = game.game_time.strftime("%b %d")
     .name
-      = game['home']
-    .time-result W 8-7
+      = (game.home? ? "" : "@")+ game.opponent
+    .time-result
+      = (game.upcoming? ? game.game_time.strftime('%h:%M%p') : game.result_string)
     .clear
 
 .sidebar-right-link

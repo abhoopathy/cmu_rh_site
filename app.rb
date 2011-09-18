@@ -6,6 +6,63 @@ require 'sassy-buttons'
 require 'coffee-script'
 require 'v8'
 
+class Game
+  attr_accessor :game_time, :opponent, :our_score, :opponent_score
+  @playoff
+  @home
+  @win
+
+  def initialize(game)
+
+    @game_time = process_time game['year'],game['month'], game['day'],game['time']
+
+    @playoff = game['playoff'].include?('true')
+    @home = game['home'].include? 'Carnegie'
+
+    if (@home)
+      @opponent = game['away']
+      @our_score = game['home_score'].to_i
+      @opponent_score = game['away_score'].to_i
+    else
+      @opponent = game['home']
+      @our_score = game['away_score'].to_i
+      @opponent_score = game['home_score'].to_i
+    end
+
+    @win = (@our_score > @opponent_score)
+
+  end
+
+  def process_time(year,month,day,time_string)
+    colon = time_string.index ':'
+    minute = time_string[colon+1..colon+2].to_i
+    pm = (time_string[colon+3] == "p")
+    hour = time_string[0..colon-1].to_i + (pm ? 12 : 0)
+    Time.new(year.to_i,month.to_i,day.to_i,hour,minute)
+  end
+
+  def result_string
+    win? ? "W #{our_score} - #{opponent_score}" : "L #{opponent_score} - #{our_score}"
+  end
+
+  def upcoming?
+    game_time > Time.new
+  end
+
+  def playoff?
+    @playoff
+  end
+
+  def home?
+    @home
+  end
+
+  def win?
+    @win
+  end
+
+end
+
 module Nesta
   class App
     configure do
@@ -37,10 +94,6 @@ module Nesta
 
       end
 
-      def upcoming_game?(game)
-        true
-      end
-
       def csv_to_hash(csv)
         lineArray = []
         File.open(csv, 'r').each do |line|
@@ -51,7 +104,7 @@ module Nesta
         for i in (1...lineArray.length) do
           player = Hash.new
           for j in (0...headerList.length) do
-            player[headerList[j]] = lineArray[i][j]
+            player[headerList[j].strip] = (lineArray[i][j]).to_s.strip
           end
           resultHash[i-1] = player
         end
@@ -59,7 +112,10 @@ module Nesta
       end
 
       def get_schedule
-        csv_to_hash('schedule.csv')
+        gameHashList = csv_to_hash('schedule.csv')
+        games = []
+        gameHashList.each{|gameHash| games.push(Game.new(gameHash))}
+        games
       end
 
       def get_roster
