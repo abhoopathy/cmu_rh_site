@@ -33,6 +33,11 @@ class Game
 
   end
 
+  def truncate_opponent
+    @opponent.gsub('University','U.').gsub('College','Coll.')
+
+  end
+  
   def process_time(year,month,day,time_string)
     colon = time_string.index ':'
     minute = time_string[colon+1..colon+2].to_i

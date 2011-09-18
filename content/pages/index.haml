@@ -19,11 +19,12 @@ js: home
   .two-col
     :markdown
       ## Practice Info
-      Practives are held every Tuesday, 9-10 pm at  <a>Bladerunners Ice Complex</a>. Cars leave Morewood at 8pm.
+      Practives are held every Tuesday, 9-10 pm at  <a class="dialog-link" dialog="1">Bladerunners Ice Complex</a>. Cars leave Morewood at 8pm.
     
     .dialog{:dialog => '1', :title => 'Bladerunners Ice Complex'}
-      %p
-        here is some text
+      <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=5000+Forbes+Avenue,+Pittsburgh,+PA+15213&amp;daddr=bladerunners+ice+complex&amp;hl=en&amp;geocode=FQUhaQId1ik8-yEpADoaPekY8A%3BFQGXagIdOtE9-yFnJCVHQmxRcA&amp;sll=40.491517,-79.889013&amp;sspn=0.14047,0.258865&amp;vpsrc=0&amp;mra=pd&amp;ie=UTF8&amp;ll=40.49161,-79.889145&amp;spn=0.09517,0.10849&amp;t=m&amp;output=embed"></iframe>
+      :markdown
+        [Full Map](http://maps.google.com/maps?saddr=5000+Forbes+Avenue,+Pittsburgh,+PA+15213&daddr=bladerunners+ice+complex&hl=en&ll=40.492132,-79.888802&spn=0.140469,0.258865&sll=40.491517,-79.889013&sspn=0.14047,0.258865&geocode=FQUhaQId1ik8-yEpADoaPekY8A%3BFQGXagIdOtE9-yFnJCVHQmxRcA&vpsrc=0&mra=pd&t=m&z=12)  |  [Blade Runners Website](http://www.bladerunnersice.com/harmarville_home.asp)
 
     :markdown
       ## Game Info
@@ -52,12 +53,16 @@ js: home
       * Inline Pants (Recommended)
       * “Indoor” Whels (Recommended)
     
-    %button#join-button
-      Join Email List
-    
-    :markdown
-      Questions before you join? [Email Us](mailto:email@andrew)
-  
+ 
   .clear
 
+%button#join-button.dialog-link{:dialog => '3'}
+  Join Email List
+
+.dialog.email-list{:dialog => '3', :title => 'Join our Mailing List'}
+  <iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dDY1R0pkYno3bDRUZXZKUnY0ZHlpMWc6MQ" height="665" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+
+:markdown
+  Questions before you join? [Email Us](mailto:email@andrew)
 

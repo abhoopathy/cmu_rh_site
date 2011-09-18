@@ -6,9 +6,9 @@
 - get_schedule.each do |game|
   .sidebar-row{ :class => ('bold' if game.playoff?)}
     .date
-      = game.game_time.strftime("%b %d")
+      = game.game_time.strftime("%m/%e").gsub(/\A0/,'').gsub(/\s/,'')
     .name
-      = (game.home? ? "" : "@")+ game.opponent
+      = (game.home? ? "" : "@")+ game.truncate_opponent
     .time-result
       = (game.upcoming? ? game.game_time.strftime('%h:%M%p') : game.result_string)
     .clear
