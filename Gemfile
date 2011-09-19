@@ -5,6 +5,6 @@ gem 'compass'
 gem 'sassy-buttons'
 gem 'coffee-script'
 gem 'therubyracer'
-#gem 'gdocs4ruby'
+gem 'gdocs4ruby'
 
 # gem (RUBY_VERSION =~ /^1.9/) ? 'ruby-debug19': 'ruby-debug'
