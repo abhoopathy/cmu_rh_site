@@ -6,7 +6,26 @@ Title: roster
 %h1
   Roster
 
+%h2
+  Forwards
+
 %p
-  - get_roster.each do |player|
-    = player.number + ' - ' + player.name
+  - roster.get_by_position('F').each do |player|
+    = player.number + ' - ' + player.full_name
+    </br>
+  
+%h2
+  Defencemen
+
+%p
+  - roster.get_by_position('D').each do |player|
+    = player.number + ' - ' + player.full_name
+    </br>
+
+%h2
+  Goalies
+
+%p
+  - roster.get_by_position('G').each do |player|
+    = player.number + ' - ' + player.full_name
     </br>

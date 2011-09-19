@@ -2,7 +2,7 @@
   Schedule
 
 /month, day, year, time, away, away_score, home, home_score, playoff
-- get_schedule.each do |game|
+- schedule.games.each do |game|
   - if !game.playoff?
     .sidebar-row{ :class => ('bold' if game.upcoming?)}
       .date
@@ -16,7 +16,7 @@
 .sidebar-row.bold
   </br>Playoffs
 
-- get_schedule.each do |game|
+- schedule.games.each do |game|
   - if game.playoff?
     .sidebar-row{ :class => ('bold' if game.upcoming?)}
       .date

@@ -1,17 +1,17 @@
-number,name,goals
-13,Ben Walfish
-10,Zach Hissam
-43,Sam Ventura
-27,Matt Steedle
-17,Anish Mathur
-9,Eric Smith
-15,Justin Parisi
-23,Andrew Klein
-52,Jason Fox
-88,Jason Hwa
-45,Billy Bullard
-3,Matt Burnett
-99,Brian Thomson
-77,Aneesh Bhoopathy
-20,Rich Dannenberg
-4,Kevin Liebler
+number,first,last,position
+13,Ben,Walfish,F
+10,Zach,Hissam,F
+43,Sam,Ventura,F
+27,Matt,Steedle,D
+17,Anish,Mathur,F
+9,Eric,Smith,D
+15,Justin,Parisi,F
+23,Andrew,Klein,D
+52,Jason,Fox,D
+88,Jason,Hwa,F
+45,Billy,Bullard,D
+3,Matt,Burnett,D
+99,Brian,Thomson,D
+77,Aneesh,Bhoopathy,D
+20,Rich,Dannenberg,F
+4,Kevin,Liebler,G
