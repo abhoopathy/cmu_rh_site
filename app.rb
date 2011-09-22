@@ -46,15 +46,15 @@ class Schedule
   end
 
   def get_past_games
-
+    games.findall {|game| game.upcoming? == false}
   end
 
   def get_playoff_games
-
+    games.findall {|game| game.playoff? == false}
   end
   
   def get_upcoming_games
-
+    games.findall {|game| game.upcoming? == true}
   end
 end
 
