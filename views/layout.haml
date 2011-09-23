@@ -12,8 +12,7 @@
     %script(type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js")
     %script(type="text/javascript" src="js/layout.js")
 
-    - jsFile = @page.metadata('js')
-    - if jsFile != nil
+    - if @page.metadata('js') != nil
       %script(type="text/javascript" src="js/#{@page.metadata('js')}.js")
 
     %link{ :href => "/css/font/droidsans.css", :media => "screen", :rel => "stylesheet", :type => "text/css" }

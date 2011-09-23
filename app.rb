@@ -5,7 +5,6 @@ require 'sinatra'
 require 'sassy-buttons'
 require 'coffee-script'
 require 'v8'
-require 'GDocs4Ruby'
 
 class Roster
   attr_accessor :players
